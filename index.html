@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMX with DaisyUI</title>
+  <!-- Include Tailwind CSS -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="p-8">
+    <!-- Example: HTMX form submission with DaisyUI button -->
+    <form action="/submit" method="POST" hx-post="/submit">
+      <input type="text" name="message" placeholder="Type something..." class="input input-bordered mb-4">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- Example: HTMX content loading with DaisyUI button -->
+    <div hx-get="/data" hx-target="#loaded-content"></div>
+    <div id="loaded-content" class="mt-4"></div>
+  </div>
+  <!-- Include HTMX library -->
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.6.1"></script>
+</body>
+</html>
